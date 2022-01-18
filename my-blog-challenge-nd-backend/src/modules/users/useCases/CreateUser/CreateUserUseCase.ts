@@ -12,7 +12,7 @@ export class CreateUserUseCase {
 
 	async execute({ email, password, name }: ICreateUserDTO): Promise<IUser> {
 		// TODO: Criar usuário, atente ao fato que dois usuários não podem possuir o mesmo email - ok
-		// TODO: HashProvider pode ser utilizado para criptografia da senha
+		// TODO: HashProvider pode ser utilizado para criptografia da senha - ok
 		const user = await this.usersRepository.findByEmail(email);
 
 		if (user) {
